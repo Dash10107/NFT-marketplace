@@ -9,10 +9,15 @@ import CURRENT_USER_ID from "../index";
 
 function Header() {
 const [userOwnedGallery,setOwnedGallery] = useState();
+const [listingGallery,setListeningGallery] = useState();
   async function getNFTs() { 
     const userNFTIDs = await marketplace_backend.getOwnedNFTs(CURRENT_USER_ID)
   console.log('User IDs',userNFTIDs);
-  setOwnedGallery(<Gallery title="MyNFTS" ids={userNFTIDs}/>);
+  setOwnedGallery(<Gallery title="MyNFTS" ids={userNFTIDs} role ='collection'/>);
+  const listedNFtIDs = await marketplace_backend.getListedNFTs();
+  console.log('Listed IDs',listedNFtIDs);
+  setListeningGallery(<Gallery  title="Discover" ids={listedNFtIDs} role='discover'/>)
+  
    
   }
   useEffect(()=>{getNFTs()},[])
@@ -41,7 +46,7 @@ const [userOwnedGallery,setOwnedGallery] = useState();
       </header>
     </div>
     <Routes>
-      <Route  path='/discover' element={<h1>Discover</h1>}> </Route>
+      <Route  path='/discover' element={listingGallery}> </Route>
       <Route  path='/minter' element={<Minter/> }>      </Route>
       <Route  path='/collection' element={userOwnedGallery}>  </Route>
       <Route exact path='/' element={<img className="bottom-space" src={homeImage} />}> </Route>

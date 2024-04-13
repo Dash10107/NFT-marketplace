@@ -3,13 +3,13 @@ import Item from "./Item";
 import {Principal} from "@dfinity/principal"
 
 function Gallery(props) {
-  const {title,ids} = props;
+  const {title,ids,role} = props;
   const [items,setItems] = useState();
 
   function fetchNFTs() {
     if(ids !=undefined){
       setItems(
-        ids.map((id)=>(<Item nftId ={id} key={id.toText()}/>))
+        ids.map((id)=>(<Item nftId ={id} key={id.toText()} role={role}/>))
       )
     }
     }
