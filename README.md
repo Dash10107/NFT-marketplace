@@ -107,7 +107,7 @@ dfx canister call marketplace_backend mint '(vec {137; 80; 78; 71; 13; 10; 26; 1
 2. List the item into mapOfListings:
 
 ```
-dfx canister call marketplace_backend listItems '(principal "bw4dl-smaaa-aaaaa-qaacq-cai", 2)'
+dfx canister call marketplace_backend listItems '(principal "d6g4o-amaaa-aaaaa-qaaoq-cai", 2)'
 ```
 
 3. Get OpenD canister ID:
@@ -119,7 +119,7 @@ dfx canister id marketplace_backend
 4. Transfer NFT to OpenD:
 
 ```
-dfx canister call bw4dl-smaaa-aaaaa-qaacq-cai transferOwnership '(principal "be2us-64aaa-aaaaa-qaabq-cai", true)'
+dfx canister call d6g4o-amaaa-aaaaa-qaaoq-cai transferOwnership '(principal "be2us-64aaa-aaaaa-qaabq-cai", true)'
 ```
 
 # Conneting to the Token Canister

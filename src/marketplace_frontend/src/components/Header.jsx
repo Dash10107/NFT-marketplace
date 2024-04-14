@@ -46,10 +46,10 @@ const [listingGallery,setListeningGallery] = useState();
       </header>
     </div>
     <Routes>
-      <Route  path='/discover' element={listingGallery}> </Route>
-      <Route  path='/minter' element={<Minter/> }>      </Route>
-      <Route  path='/collection' element={userOwnedGallery}>  </Route>
-      <Route exact path='/' element={<img className="bottom-space" src={homeImage} />}> </Route>
+      <Route forceRefresh={true}  path='/discover' element={listingGallery}> </Route>
+      <Route forceRefresh={true} path='/minter' element={<Minter/> }>      </Route>
+      <Route forceRefresh={true} path='/collection' element={userOwnedGallery}>  </Route>
+      <Route forceRefresh={true} exact path='/' element={<img className="bottom-space" src={homeImage} />}> </Route>
     </Routes>
     </BrowserRouter>
   );
