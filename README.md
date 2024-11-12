@@ -1,4 +1,4 @@
-# NFT Marketplace
+# DSURF - NFT Marketplace
 
 ## Overview
 
